@@ -23,6 +23,15 @@ outline: none;
     user-select: none;
 }
 
+.hint
+{
+font-size:10px;
+display:block;
+margin:0 auto;
+width: 200px;
+text-align:center;
+}
+
 #MerjirText
 {
 top:35px;
@@ -44,8 +53,8 @@ $( document ).ready(function() {
 
 function Merjir()
 {
-width = $( document ).width()-$( "#Merjir" ).width();
-		height = $( document ).height()-$( "#Merjir" ).height();
+width = $( document ).width()-$( "#Merjir" ).width()-20;
+		height = $( document ).height()-$( "#Merjir" ).height()-20;
 		randX = Math.floor(Math.random() * width) + 1  
 		randY = Math.floor(Math.random() * height) + 1  
 		 $("#Merjir").animate({
@@ -58,6 +67,7 @@ width = $( document ).width()-$( "#Merjir" ).width();
 </script>
 </head>
 <body>
+<div  class="hint">Սերժին ավելի լավ մերժելու համար այս էջը բացեք համակարգչով</div>
 <Button  id="Merjir"></Button>
 </body>
 </html>
