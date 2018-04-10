@@ -52,17 +52,18 @@ $( document ).ready(function() {
 		
 	$( "#Merjir" ).click(function() {
 		Merjir();}); 
-		
-	if(!checkMobile())
+	_time=800;	
+	if(checkMobile())
 	{
-		TimeOut();
+		_time = 400;
 	}
+	TimeOut(_time);
 });
 
-function TimeOut()
+function TimeOut(time)
 {
 	Merjir();
-	setTimeout(function(){ TimeOut(); }, 500);
+	setTimeout(function(){ TimeOut(time); }, time);
 }
 
 function Merjir()
