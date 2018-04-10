@@ -52,7 +52,18 @@ $( document ).ready(function() {
 		
 	$( "#Merjir" ).click(function() {
 		Merjir();}); 
+		
+	if(!checkMobile())
+	{
+		TimeOut();
+	}
 });
+
+function TimeOut()
+{
+	Merjir();
+	setTimeout(function(){ TimeOut(); }, 500);
+}
 
 function Merjir()
 {
@@ -66,11 +77,27 @@ width = $( document ).width()-$( "#Merjir" ).width()-20;
         },50);
 }
 
+function checkMobile() {
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+
 
 </script>
 </head>
 <body>
-<div  class="hint">Սերժին ավելի լավ մերժելու համար այս էջը բացեք համակարգչով</div>
+<div  class="hint"></div>
 <Button  id="Merjir"></Button>
 </body>
 </html>
