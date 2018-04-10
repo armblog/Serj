@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Մերժիր Սերժին</title>
+ 
+<style>
+#Merjir
+{
+width:135px;
+height:100px;
+position:relative;
+font-size:16px; 
+background-image: url('Serj.png');
+background-repeat: no-repeat;
+outline: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#MerjirText
+{
+top:35px;
+position:relative;
+}
+
+</style>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'></script>
+<script>
+
+$( document ).ready(function() {
+    $( "#Merjir" ).mouseover(function() {
+	
+		width = $( document ).width()-$( "#Merjir" ).width();
+		height = $( document ).height()-$( "#Merjir" ).height();
+		randX = Math.floor(Math.random() * width) + 1  
+		randY = Math.floor(Math.random() * height) + 1  
+		 $("#Merjir").animate({
+            left: randX,
+			top : randY
+        },50);
+});
+});
+
+</script>
+</head>
+<body>
+<Button  id="Merjir"><span id="MerjirText" class="unselectable">Մերժիր Սերժին</span></Button>
+</body>
+</html>
